@@ -117,8 +117,9 @@ class Program //class that is called Program
         //how many is within the list
         {
             damageableGameObjects[i].TakeDamage(i); //the list called damageableGameObjects called whatever is i during the time 
-            //of the loop then will call the function within the List and the  
+            //of the loop then will call the function within the List and then give reduce health or whatever integer value is
+			//at the time and then reduce that value by the value i
         }
-        Console.ReadLine();
+        Console.ReadLine() //this will then read the line;
     }
 }
