@@ -4,19 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FSM
+namespace ADGP_125
 {
     //Finite State Machine
     class Program
     {
         static void Main(string[] args)
         {
-            Player dog = new Player("James", 5, 50);
-            Player cat = new Player("Jesse", 10, 20);
+            FSM Test;
 
-            List<Player> Animals = new List<Player>();
-            Animals.Add(dog);
-            Animals.Add(cat);
+            Test.;
         }
     }
 }
