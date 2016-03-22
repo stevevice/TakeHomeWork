@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 class FSM
 {
-    public static List<string> States = new List<string>();
+    public static List<string> States = new List<string> { "INIT" };
 
     string CState = States[0];
 
-    void AddState(string NewsState)
+    public void AddState(string NewsState)
     {
         foreach (string i in States)
         {
@@ -25,20 +25,21 @@ class FSM
         }
     }
 
-    class Transition
+    public class Transition
     {
         public string from;
         public string to;
 
-        Transition()
+        Transition(string f, string t)
         {
-
+            from = f;
+            to = t;
         }
     }
 
     List<Transition> TransitionList = new List<Transition>();
 
-    void AddTransition(Transition NewTrans)
+    public void AddTransition(Transition NewTrans)
     {
         foreach (string i in States)
         {
@@ -65,7 +66,7 @@ class FSM
         }
     }
 
-    void ChangeState(string CurrentState, string NextState)
+    public void ChangeState(string CurrentState, string NextState)
     {
         foreach (Transition i in TransitionList)
         {
@@ -83,7 +84,5 @@ class FSM
     FSM()
     {
 
-
     }
-
 }

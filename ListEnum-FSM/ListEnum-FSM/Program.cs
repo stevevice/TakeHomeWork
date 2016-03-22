@@ -12,8 +12,9 @@ namespace ADGP_125
         static void Main(string[] args)
         {
             FSM Test;
-
-            Test.;
+            Test.AddState("IDLE");
+            Test.AddTransition();
+            
         }
     }
 }
