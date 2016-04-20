@@ -2,7 +2,7 @@ import pygame as gfx #this is the library that we call called pygame--- as gfx i
 class Node:
 	def __init__(self, x, y): #when initialized it  requires 2 parameters which is an x and y
 		self.parent = None	#no parent or is null
-		self.color = (255,255,255) #color is set her
+		self.color = (255,255,255) #color is set here
 		
 		self.width = 20
 		self.height = 20
@@ -10,7 +10,7 @@ class Node:
 		self.left = (self.margin + self.width) *  x + self.margin
 		self.top = (self.margin + self.height) *  y + self.margin
 		self.walkable = True
-		self.pos = (x, self.height - y)
+		self.pos = (x, y)
 		self.f = None
 		self.g = None
 		self.h = None
