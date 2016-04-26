@@ -3,7 +3,7 @@ class Node:
 	def __init__(self, x, y): #when initialized it  requires 2 parameters which is an x and y
 		self.parent = None	#no parent or is null
 		self.color = (255,255,255) #color is set here
-		
+		self.adjacents = []
 		self.width = 20
 		self.height = 20
 		self.margin = 5
@@ -16,7 +16,7 @@ class Node:
 		self.f = None
 		self.g = None
 		self.h = None
-
+	
 	def draw(self, screen, color):
 		margin = self.margin
 		color = (0, 0, 255) if (self.walkable) else (255,0,0)
@@ -39,15 +39,53 @@ class Astar:
 		self.PARENT = [] #path
 		self.start = Start
 		self.goal = Goal
+		self.current = Start
+					
 		
-	
 	def Run(self):
-		OPEN.append(Start) #Add Start to the OPEN list
+		OPEN.append(self.start) #Add Start to the OPEN list
+		GetAdjacents(self.current)
+		for i in self.current.adjacents:
+			par
+		OLCL()
 		
-		while not self.OPEN: #while list not
-			current = self.LowestF(self.OPEN)
 		
-	'''
+		#while not self.OPEN: #while list not
+			#current = self.LowestF(self.OPEN)
+		
+	''' 
+	def SwitchNode(self, NodeA, NodeB)
+		Current = NodeA
+		if self.current == Current :
+			for i in Current.adjacents:
+				if NodeB == i :
+					for j in self.CLOSED:
+						if j !=NodeB:							
+							self.current =  NodeB
+	
+	def SetParent(self, NodeA, NodeB)
+		parent = NodeA
+		node = NodeB
+		node.parent = parent
+		PARENT.append(parent)
+	
+	def GetAdjacents(self, Node)
+		bottom = (y + 1)
+		top = (y - 1)
+		right = (x + 1)
+		left = (x - 1)
+		topRight = (right, top)
+		topLeft = (left, top)
+		botLeft = (left, bottom)
+		botRight = (right, bottom)
+		adj = [bottom, top, right, left, topRight, topLeft, botLeft, botRight] 
+		for i in adj:
+			if (i in SearchSpace)
+				if (SearchSpace[i].walkable)
+					Node.adjacents.append(SearchSpace[i])
+					SearchSpace[i].
+					self.OPEN.append(SearchSpace[i])
+	
 	def ManDis(self, NodeA, NodeB)
 		#return a scalar values
 		num1 = NodeA.X - NodeB.X
@@ -56,19 +94,19 @@ class Astar:
 		NodeB.setH(MH)
 					
 	def OLCL(self)
-			current = OPEN[0]
-			OPEN.remove(current)
-			CLOSED.append(current)
+			self.current = OPEN[0]
+			self.OPEN.remove(current)
+			self.CLOSED.append(current)
 	
 	def GDis(self, Node A, NodeB)
 		NodeA.X   
 	'''	
 			
-	def LowestF(self, Nodes):
+	def LowestF(self, Node):
 		lowestF = -1
 		nodeWithLowestF = None
-		for node in Nodes:
-			if(node.f > lowestF):
+		for node in Node:
+			if(node.f < lowestF):
 				lowestF = node.f
 				nodeWithLowestF = node
 		return nodeWithLowestF

@@ -11,10 +11,7 @@
 import pygame
 from astar import *
 
-
-
 def main():
-
 
 	#create the search space to look through
 	searchSpace = [] #the search space is an empty array or begins this way
@@ -63,13 +60,13 @@ def main():
 		#I just need to have a start so i will just test it for now with the example thats given in the online material
 		Alg = Astar(searchSpace, Start, Goal)
 		
-		
+		 
 		
 		'''
 		for i in searchSpace:
 			Alg.OPEN.append(searchSpace[i]) if (i.walkable == true) else Alg.CLOSE.append(searchSpace[i])
 		
-		#Alg.Run()
+		Alg.Run()
 		'''
 		
 		# Set the screen background
