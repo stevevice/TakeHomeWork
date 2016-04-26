@@ -23,7 +23,8 @@ def main():
 			n = Node(x, y) # instantiate a node at the position of both x and y
 			#x goes right
 			#y goes down
-			walkable = False if (x >= 3 and x <= 3 and y >= 1 and y <= 3) else True # He sets these areas as a different color as defined if player walkable is false
+			walkable = False if (x >= 3 and x <= 3 and y >= 1 and y <= 3) else True # He sets these areas as a different color as defined 
+			#if player walkable is false/////subject to change because of how its written
 			#mx means message x and so on...
 			print("x =:{mx} y=: {my} | pos =: {position}".format(mx = x, my = y, position = n.pos)) #prints out the position
 			
@@ -48,9 +49,8 @@ def main():
 	clock = pygame.time.Clock()
 	
 	#Start and End Nodes
-	#Start = (1,2)
-	#Goal = (5,2)
-
+	Start = Node (1,2)
+	Goal = Node (5,2)
 
 	# -------- Main Program Loop -----------
 	while not done: #this while loop ends when done is marked true
@@ -61,9 +61,17 @@ def main():
 		#Implementing Astar Algorithm
 		#*Thought* seeing as the way the Astar class is defined inside of its class i need to call it with the following parameters(Searchspace, start, end)
 		#I just need to have a start so i will just test it for now with the example thats given in the online material
-		#Alg = Astar(searchSpace, Start, Goal)
+		Alg = Astar(searchSpace, Start, Goal)
 		
-
+		
+		
+		'''
+		for i in searchSpace:
+			Alg.OPEN.append(searchSpace[i]) if (i.walkable == true) else Alg.CLOSE.append(searchSpace[i])
+		
+		#Alg.Run()
+		'''
+		
 		# Set the screen background
 		screen.fill((0,0,0))
 

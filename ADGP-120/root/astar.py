@@ -10,6 +10,8 @@ class Node:
 		self.left = (self.margin + self.width) *  x + self.margin
 		self.top = (self.margin + self.height) *  y + self.margin
 		self.walkable = True
+		self.X = x
+		self.Y = y
 		self.pos = (x, y)
 		self.f = None
 		self.g = None
@@ -27,18 +29,40 @@ class Node:
 		return self.h + self.g
 	def setH(self, val):
 		self.h = val
-	def setG(self, val):
+	def setG(self, val): #this is manhattan Distance
 		self.g = val
 
 class Astar:
 	def __init__(self, SearchSpace, Start, Goal):
 		self.OPEN = []
-		self.CLOSED = []		
+		self.CLOSED = []
+		self.PARENT = [] #path
+		self.start = Start
+		self.goal = Goal
+		
 	
 	def Run(self):
-		self.OPEN.append(Start)
-		while not self.OPEN:
+		OPEN.append(Start) #Add Start to the OPEN list
+		
+		while not self.OPEN: #while list not
 			current = self.LowestF(self.OPEN)
+		
+	'''
+	def ManDis(self, NodeA, NodeB)
+		#return a scalar values
+		num1 = NodeA.X - NodeB.X
+		num2 = NodeA.Y - NodeB.Y
+		MH = num1 + num2
+		NodeB.setH(MH)
+					
+	def OLCL(self)
+			current = OPEN[0]
+			OPEN.remove(current)
+			CLOSED.append(current)
+	
+	def GDis(self, Node A, NodeB)
+		NodeA.X   
+	'''	
 			
 	def LowestF(self, Nodes):
 		lowestF = -1
@@ -49,6 +73,7 @@ class Astar:
 				nodeWithLowestF = node
 		return nodeWithLowestF
 '''
+	//I think that this should go in the Run
 	TODO.Add(start)
 
 
