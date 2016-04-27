@@ -62,12 +62,13 @@ def main():
 		
 		 
 		
-		'''
+		
 		for i in searchSpace:
 			Alg.OPEN.append(searchSpace[i]) if (i.walkable == true) else Alg.CLOSE.append(searchSpace[i])
 		
 		Alg.Run()
-		'''
+		
+		
 		
 		# Set the screen background
 		screen.fill((0,0,0))

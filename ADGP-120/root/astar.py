@@ -44,11 +44,14 @@ class Astar:
 		
 	def Run(self):
 		OPEN.append(self.start) #Add Start to the OPEN list
+		for j in SearchSpace[j]
+			ManDis(self.current, SearchSpace[j])
 		GetAdjacents(self.current)
 		for i in self.current.adjacents:
-			par
+			SearchSpace[i].parent = self.current
 		OLCL()
 		
+			
 		
 		#while not self.OPEN: #while list not
 			#current = self.LowestF(self.OPEN)
@@ -83,7 +86,7 @@ class Astar:
 			if (i in SearchSpace)
 				if (SearchSpace[i].walkable)
 					Node.adjacents.append(SearchSpace[i])
-					SearchSpace[i].
+					SetParent(Node, SearchSpace[i])
 					self.OPEN.append(SearchSpace[i])
 	
 	def ManDis(self, NodeA, NodeB)
@@ -99,7 +102,11 @@ class Astar:
 			self.CLOSED.append(current)
 	
 	def GDis(self, Node A, NodeB)
-		NodeA.X   
+		for i in SearchSpace:
+			if NodeA == SearchSpace[i]:
+				if NodeB
+		
+		
 	'''	
 			
 	def LowestF(self, Node):
