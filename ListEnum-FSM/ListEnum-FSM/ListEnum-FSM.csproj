@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="FSM.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Programs\Characters.cs" />
+    <Compile Include="Programs\SaveLoad.cs" />
+    <Compile Include="Programs\FSM.cs" />
+    <Compile Include="Programs\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
