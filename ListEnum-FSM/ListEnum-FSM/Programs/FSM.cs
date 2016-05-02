@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class FSM
+public class FSM
 {
     public static List<string> States = new List<string> { "INIT" };
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
+﻿
 public class Character
 {
     string name;
@@ -13,6 +7,8 @@ public class Character
     float defense;
     float speed;
     float experience;
+
+    Character() { }
 
     public Character(string Name, float hp, float atk, float def, float spd, float xp)
     {
