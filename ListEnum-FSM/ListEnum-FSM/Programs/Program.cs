@@ -13,28 +13,36 @@ namespace ADGP_125
         
         static void Main(string[] args)
         {
-            //FSM Test = new FSM();
-            //Test.AddState("IDLE");
-            //Test.AddTransition("INIT", "IDLE");
-            //Test.ListStates();
-            //Test.ListTransitions();
-            //Console.WriteLine ("CState" + Test.CurrentState);
-            //Test.ChangeState("IDLE");
-            //Console.WriteLine("CState" + Test.CurrentState);
-            //SaveLoad<FSM> saveLoad = new SaveLoad<FSM>();
-            //saveLoad.Serialize("FSM", Test);
-            Test1();
+            Test2();
             Console.WriteLine();
         }
 
+        
         static void Test1()
         {
-            Character c = new Character("ben", 5, 5, 1, 1, 1);
-            SaveLoad<Character> sl = new SaveLoad<Character>();
+            SaveLoad<Player> sl = new SaveLoad<Player>();
+            Player c;
+            c = new Player("Ben", 5, 1);
             sl.Serialize("benny", c);
-            
+        }
+
+        static void Test2()
+        {
+            SaveLoad<Character> sl = new SaveLoad<Character>();
+            sl.Deserialize("benny");
+            Console.WriteLine(sl.ToString());
+        }
+
+        void Test3()
+        {
+            FSM Test = new FSM();
+            Test.AddState("IDLE");
+            Test.AddTransition("INIT", "IDLE");
+            Test.ListStates();
+            Test.ListTransitions();
+            Console.WriteLine("CState" + Test.CurrentState);
+            Test.ChangeState("IDLE");
+            Console.WriteLine("CState" + Test.CurrentState);
         }
     }
-
-   
 }

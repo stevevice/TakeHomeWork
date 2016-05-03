@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Xml.Serialization;
+using System.Xml;
 
 public class SaveLoad<T> //class for the serializing and Deserializing information
 {
@@ -30,22 +31,20 @@ public class SaveLoad<T> //class for the serializing and Deserializing informati
             serializer.Serialize(fs, Data);
             //serializes the data and then names it whatever I named it in the FinalName variable
             fs.Close();
+            
             //closes this file
         }
     }
 
     public T Deserialize(string FileName)//deserializing the function
-    //takes in the 
     {
         T t;
-        //
-        using (FileStream fs = File.OpenRead(@"..\..\SavedFiles\" + FileName + ".bin"))
+        using (FileStream fs = File.OpenRead(@"..\..\SavedFiles\" + FileName + ".xml"))
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(T));
-            TextReader reader = new StreamReader(FileName);
+            t = (T)deserializer.Deserialize(fs);
+            fs.Close();
 
-            t = (T)deserializer.Deserialize(reader);
-            reader.Close();
             //closes the file
         }
         return t;
