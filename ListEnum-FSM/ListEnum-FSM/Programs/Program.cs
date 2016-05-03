@@ -28,9 +28,9 @@ namespace ADGP_125
 
         static void Test2()
         {
-            SaveLoad<Character> sl = new SaveLoad<Character>();
-            sl.Deserialize("benny");
-            Console.WriteLine(sl.ToString());
+            SaveLoad<Player> sl = new SaveLoad<Player>();
+            Player bitch = sl.Deserialize("benny");
+            Console.WriteLine(bitch);
         }
 
         void Test3()
