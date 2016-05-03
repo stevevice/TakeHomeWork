@@ -39,7 +39,7 @@ public class SaveLoad<T> //class for the serializing and Deserializing informati
     public T Deserialize(string FileName)//deserializing the function
     {
         T t;
-        using (FileStream fs = File.OpenRead(@"..\..\SavedFiles\" + FileName + ".xml"))
+        using (FileStream fs = File.OpenRead(Directory.GetCurrentDirectory() + "\SavedFiles\ " + FileName + ".xml"))
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(T));
             t = (T)deserializer.Deserialize(fs);

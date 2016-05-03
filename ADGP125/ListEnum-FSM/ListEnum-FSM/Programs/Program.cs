@@ -13,8 +13,14 @@ namespace ADGP_125
         
         static void Main(string[] args)
         {
+            Console.WriteLine("You are about to Serialize.");
+            Test1();
+            Console.ReadLine();
+            Console.WriteLine("You are about to Deserialize from the file in the folder SavedFiles");
             Test2();
-            Console.WriteLine();
+            Console.ReadLine();
+            Test3();
+            Console.ReadLine();
         }
 
         
@@ -22,20 +28,24 @@ namespace ADGP_125
         {
             SaveLoad<Player> sl = new SaveLoad<Player>();
             Player c;
-            c = new Player("Ben", 5, 1);
+            c = new Player("Ben", 10, 1);
             sl.Serialize("benny", c);
+            Console.WriteLine("You just serialized.");
         }
 
         static void Test2()
         {
             SaveLoad<Player> sl = new SaveLoad<Player>();
-            Player bitch = sl.Deserialize("benny");
-            Console.WriteLine(bitch);
+            Player Ben = sl.Deserialize("benny");
+            Console.WriteLine("name = " + Ben.name + "\n");
+            Console.WriteLine("health = " + Ben.health + "\n");
+            Console.WriteLine("attack = " + Ben.attack + "\n");
         }
 
-        void Test3()
+        static void Test3()
         {
-            FSM Test = new FSM();
+            FSM<string> Test = new FSM<string>();
+            Test.AddState("INIT");
             Test.AddState("IDLE");
             Test.AddTransition("INIT", "IDLE");
             Test.ListStates();

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Player xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <name>Ben</name>
-  <health>5</health>
+  <health>10</health>
   <attack>1</attack>
 </Player>

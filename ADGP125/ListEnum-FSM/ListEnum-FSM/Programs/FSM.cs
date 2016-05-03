@@ -4,30 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class FSM
+public class FSM<T>
 {
-    public static List<string> States = new List<string> { "INIT" };
+    public static List<T> States = new List<T> {  };
 
-    string CState = States[0];
+    T CState;
 
-    public void AddState(string NewState)
+    public void AddState(T NewState)
     {
+        NewState.ToString();
             if (!States.Contains(NewState))
             {
                 States.Add(NewState);
+                if (CState == null)
+                {
+                CState = NewState;
+                }
             }
             else
             {
-                Console.WriteLine("YoU CaNt Do ThAt!");
+                Console.WriteLine("There is already a similar State.");
             }
         }
 
     class Transition
     {
-        public string from;
-        public string to;
+        public T from;
+        public T to;
 
-        public Transition(string f, string t)
+        public Transition(T f, T t)
         {
             from = f;
             to = t;
@@ -36,8 +41,11 @@ public class FSM
 
     List<Transition> TransitionList = new List<Transition>();
 
-    public void AddTransition(string NewFrom, string NewTo)
+    public void AddTransition(T NewFrom, T NewTo)
     {
+        NewFrom.ToString();
+        NewTo.ToString();
+
         if (States.Contains(NewFrom) && States.Contains(NewTo))
         {
             Transition NewTrans = new Transition(NewFrom, NewTo);
@@ -47,21 +55,21 @@ public class FSM
             }
             else
             {
-                Console.WriteLine("YoU CaNt Do ThAt!");
+                Console.WriteLine("There is already a Transition for these two States");
             }
         }
         else
         {
-            Console.WriteLine("YoU CaNt Do ThAt!");
+            Console.WriteLine("You dont have one of the states.");
         }
     }
 
-    public void ChangeState(string NextState)
+    public void ChangeState(T NextState)
     {
         Transition PossTrans = new Transition(CState, NextState);
         foreach (Transition i in TransitionList)
         {
-            if (i.from == CState && i.to == NextState)
+            if (i.from.ToString() == CState.ToString() && i.to.ToString()== NextState.ToString())
             {
                 CState = NextState;
             }
@@ -79,7 +87,8 @@ public class FSM
 
     public void ListStates()
     {
-        foreach(string i in States)
+
+        foreach(T i in States)
         {
             Console.WriteLine(i + "\n");
         }
@@ -89,13 +98,13 @@ public class FSM
     {
         foreach(Transition i in TransitionList)
         {
-            Console.WriteLine(i.from + " to " + i.to + "\n");
+            Console.WriteLine(i.from.ToString() + " to " + i.to.ToString() + "\n");
         }
     }
 
     public string CurrentState
     {
-        get { return CState; }    
+        get { return CState.ToString(); }    
     }
 
     public FSM()
