@@ -23,7 +23,7 @@ class Node:
 		gfx.draw.rect(screen, color, (self.left , self.top, self.width, self.height))
 		
 	def setWalk(self, walkable):
-		self.walkable = walkable
+		self.walkable = walkable 
 		 
 	def getF(self):
 		return self.h + self.g
@@ -56,7 +56,6 @@ class Astar:
 		#while not self.OPEN: #while list not
 			#current = self.LowestF(self.OPEN)
 		
-	''' 
 	def SwitchNode(self, NodeA, NodeB)
 		Current = NodeA
 		if self.current == Current :
@@ -89,17 +88,17 @@ class Astar:
 					SetParent(Node, SearchSpace[i])
 					self.OPEN.append(SearchSpace[i])
 	
-	def ManDis(self, NodeA, NodeB)
-		#return a scalar values
-		num1 = NodeA.X - NodeB.X
-		num2 = NodeA.Y - NodeB.Y
-		MH = num1 + num2
-		NodeB.setH(MH)
-					
 	def OLCL(self)
 			self.current = OPEN[0]
 			self.OPEN.remove(current)
 			self.CLOSED.append(current)
+	
+	'''
+	def ManDis(self, NodeA, NodeB)
+		#return a scalar values
+		
+			
+	
 	
 	def GDis(self, Node A, NodeB)
 		for i in SearchSpace:
