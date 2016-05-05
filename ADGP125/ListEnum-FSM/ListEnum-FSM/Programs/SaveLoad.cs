@@ -15,7 +15,7 @@ public class SaveLoad<T> //class for the serializing and Deserializing informati
     //Function that has two parameters one of type string and one of generic type
     //the string will be used to name the file and the T will be the serialized data
     {
-        using (FileStream fs = File.Create(@"..\..\SavedFiles\" + FileName + ".xml"))
+        using (FileStream fs = File.Create(Directory.GetCurrentDirectory() + "\\SavedFiles\\" + FileName + ".xml"))
         //creates a file within this project its in and then names it the string passed 
         //into the function and gives them a file type of bin 
         {
@@ -39,7 +39,7 @@ public class SaveLoad<T> //class for the serializing and Deserializing informati
     public T Deserialize(string FileName)//deserializing the function
     {
         T t;
-        using (FileStream fs = File.OpenRead(Directory.GetCurrentDirectory() + "\SavedFiles\ " + FileName + ".xml"))
+        using (FileStream fs = File.OpenRead(Directory.GetCurrentDirectory() + "\\SavedFiles\\" + FileName + ".xml"))
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(T));
             t = (T)deserializer.Deserialize(fs);

@@ -2,23 +2,21 @@
 
 namespace ADGP_125
 {
-
-    
-    public interface Character
+    public interface Character//the interface called that my class can implement from
     {
-        string name
+        string name //created a variable that all classes will inherit from this class of type string
         {
             get;
             set;
         }
 
-        float health
+        float health//created a variable that all classes will inherit from this class of type float
         {
             get;
             set;
         }
 
-        float attack
+        float attack//created a variable that all classes will inherit from this class of type float
         {
             get;
             set;
@@ -27,66 +25,64 @@ namespace ADGP_125
     }
 
     [Serializable]
-    public class Player: Character
+    public class Player: Character //Created a class that implements from interface Character and is Serializable
     {
         string _name;
         float _health;
         float _attack;
 
-        public string name
+        public string name //public string variable 
         {
-            get
+            get //grabs the  variable name and  returns the value
             {
                 return _name;
             }
 
-            set
+            set // gives the  variable the value 
             {
-                _name = value;
+                _name = value; 
             }
         }
 
-        public float health
+        public float health //public float variable
         {
-            get
+            get //grabs the  variable name and  returns the value
             {
                 return _health;
             }
 
-            set
+            set // gives the  variable the value 
             {
                 _health = value;
             }
         }
 
-        public float attack
+        public float attack //public float variable
         {
-            get
+            get //grabs the  variable name and  returns the value
             {
                 return _attack;
             }
 
-            set
+            set // gives the  variable the value 
             {
                 _attack = value;
             }
         }
 
-        public Player(string Name, float hp, float atk)
+        public Player(string Name, float hp, float atk) //Constructor that  takes 3 parameters
         {
             name = Name;
             health = hp;
             attack = atk;
         }
 
-        Player()
+        Player() //Default Constructor
         {
             name = "Steve";
             health = 10;
             attack = 2;
         }
-
-
     }
 }
 

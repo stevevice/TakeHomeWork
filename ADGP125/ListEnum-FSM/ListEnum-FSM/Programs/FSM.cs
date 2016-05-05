@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class FSM<T>
+public class FSM<T> //class that will take in a type  given to it
 {
-    public static List<T> States = new List<T> {  };
+    public static List<T> States = new List<T>(); //Empty List of Generic Type 
 
-    T CState;
+    T CState; //Variable of generic type
 
-    public void AddState(T NewState)
+    public void AddState(T NewState) //function that adds a state and needs 1 parameter which is the state you want to pass in
     {
-        NewState.ToString();
-            if (!States.Contains(NewState))
-            {
+            if (!States.Contains(NewState)) //if states list does not contain variable NewState value...
+            {//it will  add the  state and if CState is an empty variable then CState is equal to NewState
                 States.Add(NewState);
                 if (CState == null)
                 {
@@ -29,24 +28,22 @@ public class FSM<T>
 
     class Transition
     {
+        //2 public variables
         public T from;
         public T to;
 
-        public Transition(T f, T t)
+        public Transition(T f, T t) //Constructor that  is used define a Transition 
         {
             from = f;
             to = t;
         }
     }
 
-    List<Transition> TransitionList = new List<Transition>();
+    List<Transition> TransitionList = new List<Transition>(); //transition list that is used to keep track of what transitions are available
 
-    public void AddTransition(T NewFrom, T NewTo)
+    public void AddTransition(T NewFrom, T NewTo) //void function that is used to add a transition and it takes in 2 parameters both of them are of generic type T
     {
-        NewFrom.ToString();
-        NewTo.ToString();
-
-        if (States.Contains(NewFrom) && States.Contains(NewTo))
+        if (States.Contains(NewFrom) && States.Contains(NewTo)) //if list states contains variable 
         {
             Transition NewTrans = new Transition(NewFrom, NewTo);
             if (!TransitionList.Contains(NewTrans))
@@ -80,7 +77,7 @@ public class FSM<T>
             //}
             else
             {
-                Console.WriteLine("YoU CaNt Do ThAt!");
+                Console.WriteLine("You dont have a Transition that allows for you to switch from Current state to the State you want.");
             }
         }
     }

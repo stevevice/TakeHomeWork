@@ -45,6 +45,7 @@ namespace ADGP_125
         static void Test3()
         {
             FSM<string> Test = new FSM<string>();
+            
             Test.AddState("INIT");
             Test.AddState("IDLE");
             Test.AddTransition("INIT", "IDLE");
