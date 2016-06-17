@@ -16,12 +16,9 @@ namespace ADGP125
         [STAThread]
         static void Main()
         {
-
-            Character Player = new Character("Steve", 10, 2, 1, 2, 0);
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new AddState());
         }
     }
 }

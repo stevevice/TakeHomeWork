@@ -10,14 +10,20 @@ using System.Windows.Forms;
 
 namespace ADGP125
 {
-    public partial class Form1 : Form
+
+    public partial class AddTransition : Form
     {
-        public Form1()
+        public AddTransition()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
