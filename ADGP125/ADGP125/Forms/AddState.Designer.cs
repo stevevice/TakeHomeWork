@@ -36,14 +36,18 @@
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.transitionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seeStatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seeTransitionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seeCurrentStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.changeStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(124, 101);
+            this.button1.Location = new System.Drawing.Point(53, 85);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 25);
             this.button1.TabIndex = 0;
@@ -53,7 +57,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(192, 45);
+            this.textBox2.Location = new System.Drawing.Point(40, 59);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(133, 20);
@@ -64,12 +68,14 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
-            this.removeToolStripMenuItem});
+            this.removeToolStripMenuItem,
+            this.dataToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(358, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(234, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // addToolStripMenuItem
             // 
@@ -100,44 +106,65 @@
             this.stateToolStripMenuItem1.Name = "stateToolStripMenuItem1";
             this.stateToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.stateToolStripMenuItem1.Text = "State";
+            this.stateToolStripMenuItem1.Click += new System.EventHandler(this.stateToolStripMenuItem1_Click);
             // 
             // transitionToolStripMenuItem1
             // 
             this.transitionToolStripMenuItem1.Name = "transitionToolStripMenuItem1";
             this.transitionToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.transitionToolStripMenuItem1.Text = "Transition";
+            this.transitionToolStripMenuItem1.Click += new System.EventHandler(this.transitionToolStripMenuItem1_Click);
+            // 
+            // dataToolStripMenuItem
+            // 
+            this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seeStatesToolStripMenuItem,
+            this.seeTransitionsToolStripMenuItem,
+            this.seeCurrentStateToolStripMenuItem,
+            this.changeStateToolStripMenuItem});
+            this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.dataToolStripMenuItem.Text = "Data";
+            // 
+            // seeStatesToolStripMenuItem
+            // 
+            this.seeStatesToolStripMenuItem.Name = "seeStatesToolStripMenuItem";
+            this.seeStatesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.seeStatesToolStripMenuItem.Text = "See States";
+            // 
+            // seeTransitionsToolStripMenuItem
+            // 
+            this.seeTransitionsToolStripMenuItem.Name = "seeTransitionsToolStripMenuItem";
+            this.seeTransitionsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.seeTransitionsToolStripMenuItem.Text = "See Transitions";
+            // 
+            // seeCurrentStateToolStripMenuItem
+            // 
+            this.seeCurrentStateToolStripMenuItem.Name = "seeCurrentStateToolStripMenuItem";
+            this.seeCurrentStateToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.seeCurrentStateToolStripMenuItem.Text = "See Current State";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(124, 145);
+            this.button2.Location = new System.Drawing.Point(53, 116);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 25);
             this.button2.TabIndex = 6;
             this.button2.Text = "Done";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox1
+            // changeStateToolStripMenuItem
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Integer",
-            "Float",
-            "Double",
-            "Character",
-            "String",
-            "Boolean"});
-            this.comboBox1.Location = new System.Drawing.Point(38, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.changeStateToolStripMenuItem.Name = "changeStateToolStripMenuItem";
+            this.changeStateToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.changeStateToolStripMenuItem.Text = "Change State";
             // 
             // AddState
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 192);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(234, 194);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
@@ -165,7 +192,11 @@
         private System.Windows.Forms.ToolStripMenuItem transitionToolStripMenuItem1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem stateToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seeStatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seeTransitionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seeCurrentStateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeStateToolStripMenuItem;
     }
 }
 

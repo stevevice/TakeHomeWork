@@ -21,7 +21,7 @@ namespace ADGP125
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            WordSave.AddState(textBox2.Text);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,43 +34,34 @@ namespace ADGP125
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            ///what does this do? also why do i need to wrap the type in paranthesis 
-            //ComboBox comboBox = (ComboBox) sender;
 
-            //I believe this gives my variable the string value of the item i played.
-            string varPicked = (string)comboBox1.SelectedItem;
-
-            //Integer
-            //Float
-            //Double
-            //Character
-            //String
-            //Boolean
-            switch (varPicked)
-            {
-                case "Integer":
-
-                    break;
-                case "Float":
-                    break;
-                case "Double":
-                    break;
-                case "Character":
-                    break;
-                case "String":
-                    break;
-                case "Boolean":
-                    break;
-                default:
-                    break;
-
-            }
-                
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveLoad<FSM<string>> sl = new SaveLoad<FSM<string>>();
+            sl.Serialize("FiniteStateMachine", WordSave);
+            MessageBox.Show("You just saved your Finite State Machine");
+        }
+
+        private void stateToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void transitionToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }

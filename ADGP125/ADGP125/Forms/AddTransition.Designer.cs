@@ -38,6 +38,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seeStatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seeTransitionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seeCurrentStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +60,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
-            this.removeToolStripMenuItem});
+            this.removeToolStripMenuItem,
+            this.dataToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -73,7 +79,7 @@
             // stateToolStripMenuItem
             // 
             this.stateToolStripMenuItem.Name = "stateToolStripMenuItem";
-            this.stateToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.stateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.stateToolStripMenuItem.Text = "State";
             // 
             // removeToolStripMenuItem
@@ -88,13 +94,13 @@
             // stateToolStripMenuItem1
             // 
             this.stateToolStripMenuItem1.Name = "stateToolStripMenuItem1";
-            this.stateToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.stateToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.stateToolStripMenuItem1.Text = "State";
             // 
             // transitionToolStripMenuItem1
             // 
             this.transitionToolStripMenuItem1.Name = "transitionToolStripMenuItem1";
-            this.transitionToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.transitionToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.transitionToolStripMenuItem1.Text = "Transition";
             // 
             // button2
@@ -121,6 +127,41 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 11;
+            // 
+            // dataToolStripMenuItem
+            // 
+            this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seeStatesToolStripMenuItem,
+            this.seeTransitionsToolStripMenuItem,
+            this.seeCurrentStateToolStripMenuItem,
+            this.changeStateToolStripMenuItem});
+            this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.dataToolStripMenuItem.Text = "Data";
+            // 
+            // seeStatesToolStripMenuItem
+            // 
+            this.seeStatesToolStripMenuItem.Name = "seeStatesToolStripMenuItem";
+            this.seeStatesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.seeStatesToolStripMenuItem.Text = "See States";
+            // 
+            // seeTransitionsToolStripMenuItem
+            // 
+            this.seeTransitionsToolStripMenuItem.Name = "seeTransitionsToolStripMenuItem";
+            this.seeTransitionsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.seeTransitionsToolStripMenuItem.Text = "See Transitions";
+            // 
+            // seeCurrentStateToolStripMenuItem
+            // 
+            this.seeCurrentStateToolStripMenuItem.Name = "seeCurrentStateToolStripMenuItem";
+            this.seeCurrentStateToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.seeCurrentStateToolStripMenuItem.Text = "See Current State";
+            // 
+            // changeStateToolStripMenuItem
+            // 
+            this.changeStateToolStripMenuItem.Name = "changeStateToolStripMenuItem";
+            this.changeStateToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.changeStateToolStripMenuItem.Text = "Change State";
             // 
             // AddTransition
             // 
@@ -156,6 +197,11 @@
         private System.Windows.Forms.ToolStripMenuItem transitionToolStripMenuItem1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seeStatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seeTransitionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seeCurrentStateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeStateToolStripMenuItem;
     }
 }
 

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 public class FSM<T> //class that will take in a type  given to it
 {
-    public static List<T> States = new List<T>(); //Empty List of Generic Type 
+    public List<T> States = new List<T>(); //Empty List of Generic Type 
 
     T CState; //Variable of generic type
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ADGP125
 {
-
     public partial class AddTransition : Form
     {
+        FSM<string> WordSave = new FSM<string>();
         public AddTransition()
         {
             InitializeComponent();

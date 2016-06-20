@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="Programs\FSM.cs" />
     <Compile Include="Programs\Program.cs" />
+    <Compile Include="Programs\SaveLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddTransition.resx">
       <DependentUpon>AddTransition.cs</DependentUpon>
