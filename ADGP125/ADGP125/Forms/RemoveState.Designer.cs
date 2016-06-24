@@ -30,13 +30,13 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transitionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.seeTransitionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seeCurrentStatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,6 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
             this.removeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -61,40 +60,22 @@
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.transitionToolStripMenuItem,
-            this.stateToolStripMenuItem});
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.addToolStripMenuItem.Text = "Add";
-            // 
-            // transitionToolStripMenuItem
-            // 
-            this.transitionToolStripMenuItem.Name = "transitionToolStripMenuItem";
-            this.transitionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.transitionToolStripMenuItem.Text = "Transition";
-            // 
-            // stateToolStripMenuItem
-            // 
-            this.stateToolStripMenuItem.Name = "stateToolStripMenuItem";
-            this.stateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.stateToolStripMenuItem.Text = "State";
-            // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.transitionToolStripMenuItem1});
+            this.transitionToolStripMenuItem1,
+            this.seeTransitionsToolStripMenuItem,
+            this.seeCurrentStatesToolStripMenuItem,
+            this.changeStateToolStripMenuItem});
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.removeToolStripMenuItem.Text = "Data";
             // 
             // transitionToolStripMenuItem1
             // 
             this.transitionToolStripMenuItem1.Name = "transitionToolStripMenuItem1";
-            this.transitionToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.transitionToolStripMenuItem1.Text = "Transition";
+            this.transitionToolStripMenuItem1.Size = new System.Drawing.Size(169, 22);
+            this.transitionToolStripMenuItem1.Text = "See States";
             // 
             // button2
             // 
@@ -112,6 +93,24 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(146, 21);
             this.comboBox1.TabIndex = 8;
+            // 
+            // seeTransitionsToolStripMenuItem
+            // 
+            this.seeTransitionsToolStripMenuItem.Name = "seeTransitionsToolStripMenuItem";
+            this.seeTransitionsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.seeTransitionsToolStripMenuItem.Text = "See Transitions";
+            // 
+            // seeCurrentStatesToolStripMenuItem
+            // 
+            this.seeCurrentStatesToolStripMenuItem.Name = "seeCurrentStatesToolStripMenuItem";
+            this.seeCurrentStatesToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.seeCurrentStatesToolStripMenuItem.Text = "See Current States";
+            // 
+            // changeStateToolStripMenuItem
+            // 
+            this.changeStateToolStripMenuItem.Name = "changeStateToolStripMenuItem";
+            this.changeStateToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.changeStateToolStripMenuItem.Text = "Change State";
             // 
             // RemoveState
             // 
@@ -138,13 +137,13 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transitionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transitionToolStripMenuItem1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ToolStripMenuItem seeTransitionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seeCurrentStatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeStateToolStripMenuItem;
     }
 }
 

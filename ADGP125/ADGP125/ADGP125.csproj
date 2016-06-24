@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\RemoveTransition .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RemoveTransition .Designer.cs">
+      <DependentUpon>RemoveTransition .cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddTransition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Programs\Program.cs" />
     <Compile Include="Programs\SaveLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\RemoveTransition .resx">
+      <DependentUpon>RemoveTransition .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddTransition.resx">
       <DependentUpon>AddTransition.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +95,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\AddState.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -86,18 +86,28 @@ public class FSM<T> //class that will take in a type  given to it
 
     public void ListStates()
     {
-
+        string temp = null;
         foreach (T i in States)
         {
-            MessageBox.Show(i + "\n");
+            if (temp == null)
+                temp = i + "\n";
+            else
+                 temp = temp + i + "\n";
         }
+
+        MessageBox.Show(temp);
     }
 
     public void ListTransitions()
     {
+        string temp = null;
         foreach (Transition i in TransitionList)
         {
-            MessageBox.Show(i.from.ToString() + " to " + i.to.ToString() + "\n");
+            if (temp == null)
+                temp = i.from.ToString() + " to " + i.to.ToString() + "\n";
+            else
+                temp = temp + i.from.ToString() + " to " + i.to.ToString() + "\n";
+            MessageBox.Show(temp);
         }
     }
 

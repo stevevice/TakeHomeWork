@@ -1,8 +1,27 @@
 import pygame as gfx #this is the library that we call called pygame--- as gfx is something i dont know 
+
+Black	=(0,0,0)
+White	=(255,255,255)
+Red		=(255,0,0)
+Lime	=(0,255,0)
+Blue	=(0,0,255)
+Yellow	=(255,255,0)
+Cyan 	=(0,255,255)
+Magenta =(255,0,255)
+Silver	=(192,192,192)
+Gray	=(128,128,128)
+Maroon	=(128,0,0)
+Olive	=(128,128,0)
+Green	=(0,128,0)
+Purple	=(128,0,128)
+Teal	=(0,128,128)
+Navy	=(0,0,128)
+Sky 	= (128, 128, 255)
+
 class Node:
 	def __init__(self, x, y): #when initialized it  requires 2 parameters which is an x and y
 		self.parent = None	#no parent or is null
-		self.color = (255,255,255) #color is set here
+		self.color = White #color is set here
 		self.adjacents = []
 		self.width = 20
 		self.height = 20
@@ -19,17 +38,18 @@ class Node:
 	
 	def draw(self, screen, color):
 		margin = self.margin
-		color = (0, 0, 255) if (self.walkable) else (255,0,0)
+		color = Blue if (self.walkable)	else Red
 		gfx.draw.rect(screen, color, (self.left , self.top, self.width, self.height))
 		
 	def setWalk(self, walkable):
 		self.walkable = walkable 
-		 
 	def getF(self):
+		if(self.g == None):
+			self.g = 0
 		return self.h + self.g
-	def setH(self, val):
+	def setH(self, val): #this is manhattan Distance
 		self.h = val
-	def setG(self, val): #this is manhattan Distance
+	def setG(self, val): 
 		self.g = val
 
 class Astar:
@@ -38,40 +58,32 @@ class Astar:
 		self.CLOSED = []
 		self.PARENT = [] #path
 		self.start = Start
+		self.start.color = Yellow
 		self.goal = Goal
+		self.goal.color = Purple
 		self.current = Start
+		self.finished = False
 					
-		
-	def Run(self):
-		OPEN.append(self.start) #Add Start to the OPEN list
-		for j in SearchSpace[j]
-			ManDis(self.current, SearchSpace[j])
-		GetAdjacents(self.current)
-		for i in self.current.adjacents:
-			SearchSpace[i].parent = self.current
-		OLCL()
-		
-			
-		
 		#while not self.OPEN: #while list not
 			#current = self.LowestF(self.OPEN)
-		
-	def SwitchNode(self, NodeA, NodeB)
+	
+	
+	def SwitchNode(self, NodeA, NodeB):
 		Current = NodeA
 		if self.current == Current :
 			for i in Current.adjacents:
 				if NodeB == i :
 					for j in self.CLOSED:
-						if j !=NodeB:							
+						if j != NodeB:							
 							self.current =  NodeB
 	
-	def SetParent(self, NodeA, NodeB)
+	def SetParent(self, NodeA, NodeB):
 		parent = NodeA
 		node = NodeB
 		node.parent = parent
-		PARENT.append(parent)
+		self.PARENT.append(parent)
 	
-	def GetAdjacents(self, Node)
+	def GetAdjacents(self, Node):
 		bottom = (y + 1)
 		top = (y - 1)
 		right = (x + 1)
@@ -82,40 +94,47 @@ class Astar:
 		botRight = (right, bottom)
 		adj = [bottom, top, right, left, topRight, topLeft, botLeft, botRight] 
 		for i in adj:
-			if (i in SearchSpace)
-				if (SearchSpace[i].walkable)
+			if (i in SearchSpace):
+				if (SearchSpace[i].walkable):
 					Node.adjacents.append(SearchSpace[i])
 					SetParent(Node, SearchSpace[i])
 					self.OPEN.append(SearchSpace[i])
 	
-	def OLCL(self)
+	def OLCL(self):
 			self.current = OPEN[0]
 			self.OPEN.remove(current)
 			self.CLOSED.append(current)
 	
 	'''
-	def ManDis(self, NodeA, NodeB)
-		#return a scalar values
+	def HScore(self, NodeA, NodeB)
+		
 		
 			
 	
 	
-	def GDis(self, Node A, NodeB)
+	def GScore(self, NodeA, NodeB)
 		for i in SearchSpace:
 			if NodeA == SearchSpace[i]:
 				if NodeB
 		
-		
 	'''	
 			
-	def LowestF(self, Node):
-		lowestF = -1
-		nodeWithLowestF = None
-		for node in Node:
-			if(node.f < lowestF):
+	def LowestF(self, Nodes):
+		lowestF = None
+		for n in Nodes:
+			if(node.f >= lowestF):
 				lowestF = node.f
+			elif(n.getF()):
 				nodeWithLowestF = node
 		return nodeWithLowestF
+		
+		
+	def Run(self):
+		self.OPEN.append(self.start) #Add Start to the OPEN list
+		GetAdjacents(self.current)
+		for i in self.current.adjacents:
+			SearchSpace[i].parent = self.current
+		OLCL()
 '''
 	//I think that this should go in the Run
 	TODO.Add(start)

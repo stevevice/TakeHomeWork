@@ -11,30 +11,13 @@
 import pygame
 from astar import *
 
-Black	=(0,0,0)
-White	=(255,255,255)
-Red		=(255,0,0)
-Lime	=(0,255,0)
-Blue	=(0,0,255)
-Yellow	=(255,255,0)
-Cyan 	=(0,255,255)
-Magenta =(255,0,255)
-Silver	=(192,192,192)
-Gray	=(128,128,128)
-Maroon	=(128,0,0)
-Olive	=(128,128,0)
-Green	=(0,128,0)
-Purple	=(128,0,128)
-Teal	=(0,128,128)
-Navy	=(0,0,128)
-Sky 	= (128, 128, 255)
 
 def main():
 
 	#create the search space to look through
 	searchSpace = [] #the search space is an empty array or begins this way
-	for x in range(7): #for every x that is less/equal to 10
-		for y in range(5): #for every y that is less/equal to 10
+	for x in range(10): #for every x that is less/equal to 10
+		for y in range(10): #for every y that is less/equal to 10
 			n = Node(x, y) # instantiate a node at the position of both x and y
 			#x goes right
 			#y goes down
@@ -51,7 +34,7 @@ def main():
 	pygame.init()
 
 	# Set the HEIGHT and WIDTH of the screen
-	WINDOW_SIZE = [180, 130]
+	WINDOW_SIZE = [480, 480]
 	screen = pygame.display.set_mode(WINDOW_SIZE)
 
 	# Set title of screen
@@ -80,19 +63,19 @@ def main():
 		
 		 
 		
-		
+		'''
 		for i in searchSpace:
-			Alg.OPEN.append(searchSpace[i]) if (i.walkable == true) else Alg.CLOSE.append(searchSpace[i])
-		
+			Alg.OPEN.append(searchSpace[i]) if (i.walkable == True) else Alg.CLOSE.append(searchSpace[i])
+		'''
 		Alg.Run()
 		
 		
 		
 		# Set the screen background
-		screen.fill((0,0,0))
+		screen.fill(Black)
 
 		for i in searchSpace:
-			i.draw(screen, (255,255,255))
+			i.draw(screen, White)
 
 		# Limit to 60 frames per second
 		clock.tick(60)

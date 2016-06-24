@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace ADGP125
 {
-    public partial class AddTransition : Form
+    public partial class RemoveTransition : Form
     {
         public FSM<string> WordSave = new FSM<string>();
         public bool TransitionDone = false;
-        public AddTransition()
+        public RemoveTransition()
         {
             InitializeComponent();
         }
